@@ -1,2 +1,3 @@
 # ip-geolocation-mapper (in development)
-Generates visual map based IP geolocation information. 
+Simple utility that accepts a list of IP addresses and builds an interactive heat map showing request volume by country. 
+
