@@ -8,9 +8,10 @@ Author(s):
 
 from geoip import geolite2
 import pandas as pd
+import country_converter as coco
 
 
-def import_addresses():
+def import_ip_addresses():
     targets = []
     with open('ip_list.txt') as f:
         for ip in f:
@@ -18,19 +19,25 @@ def import_addresses():
     return targets
 
 
-def geo_lookup(ip):
-    ip = ip.strip()
-    match = geolite2.lookup(ip)
-    if match:
-        return f"Found a match! {ip} is from {match.country}"
-    else:
-        return f"{ip} does not have a match in Geolite DB"
+def geo_lookup(ip_addresses):
+    countries = []
+    for ip in ip_addresses:
+        match = geolite2.lookup(ip.strip())
+        if match:
+            iso3_code = coco.convert(names=match.country, to='ISO3')
+            countries.append(iso3_code)
+    return countries
+
+
+
+# def generate_map(countries):
+#     data = pd.value_counts(countries).to_frame().reset_index()
+
 
 
 def main():
     ip_list = import_addresses()
-    for ip in ip_list:
-        print(geo_lookup(ip))
+    countries = geo_lookup(ip_list)
 
 
 if __name__== "__main__":
