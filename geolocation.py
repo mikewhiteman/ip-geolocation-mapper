@@ -90,7 +90,6 @@ def generate_map(countries):
     return merged
 
 
-
 def display_map(map_data):
 
     """
@@ -142,7 +141,7 @@ def display_map(map_data):
 
 
 def main():
-
+    
     ip_list = import_ip_addresses()
     countries = geo_lookup(ip_list)
     map_data= generate_map(countries)
