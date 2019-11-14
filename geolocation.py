@@ -4,8 +4,6 @@
 Generates map visual based on IP geolocation from a list of IP addresses. 
 Author(s):
     Michael Whiteman (michael.s.whiteman@gmail.com)
-
-
 """
 
 from geoip import geolite2
