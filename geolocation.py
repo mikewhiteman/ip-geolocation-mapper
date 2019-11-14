@@ -4,6 +4,8 @@
 Generates map visual based on IP geolocation from a list of IP addresses. 
 Author(s):
     Michael Whiteman (michael.s.whiteman@gmail.com)
+
+
 """
 
 from geoip import geolite2
@@ -114,7 +116,7 @@ def display_map(map_data):
     color_palette = color_palette[::-1]
 
     #Map colors based on data range
-    color_mapper = LinearColorMapper(palette = color_palette, low = 0, high = 120) #Add logic to make this dnyamic range
+    color_mapper = LinearColorMapper(palette = color_palette, low = 0, high = 30) #Add logic to make this dnyamic range
 
     #Add mouse hover feature
     hover = HoverTool(tooltips = [ ('Country/region','@Country'),('Count', '@Count')])
