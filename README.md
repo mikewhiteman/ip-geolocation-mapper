@@ -7,10 +7,10 @@ This is a simple utility that accepts a list of n+1 IPv4 addresses, queries them
 ## Usage Instructions
 More robust arg parsing coming shortly. Right now IPs are statically loaded via the ip_list file.  
 
+## Example Heatmap
+![Example Heatmap](demo/readme.gif)  
+
 ## Under Development
 * Accept file location argument (rather than hardcoded)
 * Determine intelligent min/max key range based on `len()` of IP input list
 * IPv6 support (requires tweaks in MaxMind database query)
-
-## Example Heatmap
-![Example Heatmap](demo/readme.gif)
