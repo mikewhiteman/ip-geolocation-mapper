@@ -18,4 +18,4 @@ pytz==2019.2
 requests==2.22.0
 Shapely==1.6.4.post2
 six==1.12.0
-urllib3==1.25.6
+urllib3==1.26.5
